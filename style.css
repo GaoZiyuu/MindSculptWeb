@@ -1,5 +1,71 @@
 /* Fonts */
 @import url(https://fonts.googleapis.com/css?family=Montserrat:700);
+
+/* Nav bar */
+.header {
+	padding-top: .5em;
+	padding-bottom: .5em;
+	border: 1px solid #a2a2a2;
+	background-color: #f4f4f4;
+	-webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	line-height: 1.6;
+	margin: 0;
+	min-height: 100vh;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+h2,
+h3,
+a {
+	color: #34495e;
+}
+
+a {
+	text-decoration: none;
+}
+
+
+
+.logo {
+	margin: 0;
+	font-size: 1.45em;
+}
+
+.main-nav {
+	margin-top: 5px;
+
+}
+.logo a,
+.main-nav a {
+	padding: 10px 15px;
+	text-transform: uppercase;
+	text-align: center;
+	display: block;
+}
+
+.main-nav a {
+	color: #34495e;
+	font-size: .99em;
+}
+
+.main-nav a:hover {
+	color: #718daa;
+}
+
+
+
 /* Footer */
 
 .footer-header
@@ -7,6 +73,7 @@
     text-align: center;
     font-family: "Montserrat";
     font-size: medium;
+    padding-top: 2%;
 }
 .member-footer
 {
@@ -47,29 +114,48 @@
 .ziyu-img
 {
     border-radius: 50%;
-    width: 50px;
-    height: 55px;
+    width: 60px;
+    height: 65px;
 }
 
 .yenzhen-img
 {
     border-radius: 50%;
-    width: 55px;
-    height: 55px;
+    width: 60px;
+    height: 60px;
 }
 
 .lexin-img
 {
     border-radius: 50%;
-    width: 55px;
-    height: 55px;
+    width: 60px;
+    height: 60px;
 }
 
 .irene-img
 {
     border-radius: 50%;
-    width: 50px;
-    height: 54px;
+    width: 60px;
+    height: 60px;
+}
+
+/*Word Cloud*/
+.word-body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.wordCloud {
+    width: 80%;
+    height: 80vh;
+    border: 1px solid #ccc;
+    background-color: #fff;
 }
 
 /* Responsive */
+
