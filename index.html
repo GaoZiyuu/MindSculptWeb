@@ -7,24 +7,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Style/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-    <nav>
-        <ul>
-            <li><a href="#">About</a></li>
-            <li><a href="wordCloud.html">WordCloud</a></li>
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Account</a></li>
-        </ul>
+    <nav role="navigation">
+        <div id="menuToggle">
+            <input type="checkbox" />
+            <div id="hamburger">
+                <div>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <a href="index.html" style="display: contents;"><img src="Images/logo.png" alt=""></a>
+            </div>
+            <ul id="menu">
+                <a href="#">
+                    <li>About</li>
+                </a>
+                <a href="wordCloud.html">
+                    <li>WordCloud</li>
+                </a>
+                <a href="dashboard.html">
+                    <li>Dashboard</li>
+                </a>
+            </ul>
+        </div>
     </nav>
+    <div style="height: 1000px;"></div>
     <div class="member-footer">
         <div class="footer-header">
-            Contact Us
+            <h4>Contact Us</h4>
             <div class="social-buttons-container">
                 <div class="social-button irene"><a href="https://www.linkedin.com/in/irene-chok-2716b0239/"><img
                             src="Images/irene.jpeg" class="irene-img"></a></div>
@@ -35,32 +52,53 @@
                 </div>
                 <div class="social-button yenzhen">
                     <a href="https://www.linkedin.com/in/leong-yen-zhen-92a039239/"><img src="Images/yenzhen.jpeg"
-                            class="yenzhen-img"></a></div>
+                            class="yenzhen-img"></a>
+                </div>
                 <div class="social-button ziyu">
                     <a href="https://www.linkedin.com/in/ziyu-gao-8a9b89238/"><img src="Images/ziyu.JPG"
-                            class="ziyu-img"></a></div>
+                            class="ziyu-img"></a>
+                </div>
             </div>
         </div>
         <script type="module">
-            // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-      
-        // Your web app's Firebase configuration
-        const firebaseConfig = {
-          apiKey: "AIzaSyAw-4aRRZatlYQ0HGo3WAJso8QjWjiPejQ",
-          authDomain: "mindsculpt-de553.firebaseapp.com",
-          databaseURL: "https://mindsculpt-de553-default-rtdb.asia-southeast1.firebasedatabase.app",
-          projectId: "mindsculpt-de553",
-          storageBucket: "mindsculpt-de553.appspot.com",
-          messagingSenderId: "710053589294",
-          appId: "1:710053589294:web:7892a718dd507fd9c8cabf"
-        };
-      
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-      </script>
+            // Import the functions
+            import {
+                initializeApp
+            } from 'https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js';
+    
+            import {
+                getDatabase, ref, set, get, onValue, push, child, update, remove
+            } from 'https://www.gstatic.com/firebasejs/10.6.0/firebase-database.js';
+    
+            import {
+                getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut
+            } from 'https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js';
+    
+    
+            // Firebase configuration
+            const firebaseConfig = {
+                apiKey: "AIzaSyAw-4aRRZatlYQ0HGo3WAJso8QjWjiPejQ",
+                authDomain: "mindsculpt-de553.firebaseapp.com",
+                databaseURL: "https://mindsculpt-de553-default-rtdb.asia-southeast1.firebasedatabase.app",
+                projectId: "mindsculpt-de553",
+                storageBucket: "mindsculpt-de553.appspot.com",
+                messagingSenderId: "710053589294",
+                appId: "1:710053589294:web:7892a718dd507fd9c8cabf"
+            };
+    
+            // Initialize Firebase
+            // const app = initializeApp(firebaseConfig);
+            // const db = getDatabase();
+    
+            // var feedbackData = {
+            //     username: "Dinosauro",
+            //     gender: "Female",
+            //     age: "28",
+            //     feedback: "You are doing great, never give up and keep going!"
+            // };
+    
+            // set(ref(db, 'submissions/0010'), feedbackData);
+        </script>
 </body>
 
 </html>
