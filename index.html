@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <nav role="navigation">
+    <nav role="navigation" id="nav">
         <div id="menuToggle">
             <input type="checkbox" />
             <div id="hamburger">
@@ -40,7 +40,6 @@
     </nav>
     <div id="wrapper">
         <section class="slideshow" id="js-header">
-
             <div class="slideshow__slide js-slider-home-slide is-current" data-slide="1">
                 <div class="slideshow__slide-background-parallax background-absolute js-parallax" data-speed="-1"
                     data-position="top" data-target="#js-header">
@@ -50,7 +49,7 @@
                                 <div class="slideshow__slide-background background-absolute">
                                     <div class="slideshow__slide-image-wrap background-absolute">
                                         <div class="slideshow__slide-image background-absolute"
-                                            style="background-image: url('https://images.pexels.com/photos/190537/pexels-photo-190537.jpeg?auto=compress&cs=tinysrgb&h=1080&w=1920');">
+                                            style="background-image: url('Images/s1.jpeg');">
                                         </div>
                                     </div>
                                 </div>
@@ -63,7 +62,7 @@
                         <div class="container js-parallax" data-speed="2" data-position="top" data-target="#js-header">
                             <h1 class="slideshow__slide-caption-title">Everything broken can be repaired</h1>
                             <a class="slideshow__slide-caption-subtitle -load o-hsub -link" href="#">
-                                <span class="slideshow__slide-caption-subtitle-label">See how</span>
+                                <span class="slideshow__slide-caption-subtitle-label" onclick="modalOpen()">Download Game</span>
                             </a>
                         </div>
                     </div>
@@ -152,11 +151,6 @@
                     </div>
                 </div>
             </div>
-
-
-        </section>
-        <div>
-
             <svg xmlns="http://www.w3.org/2000/svg">
                 <symbol viewBox="0 0 18 18" id="arrow-next">
                     <path id="arrow-next-arrow.svg"
@@ -167,231 +161,264 @@
                         d="M14,0.7L13.3,0L4.7,8.3l0,0L4,9l0,0l0.7,0.7l0,0l8.5,8.3l0.7-0.7L5.4,9L14,0.7z" />
                 </symbol>
             </svg>
-
-            <div style="height: 1000px;"></div>
-            <div class="member-footer">
-                <div class="footer-header">
-                    <h4>Contact Us</h4>
-                    <div class="social-buttons-container">
-                        <div class="social-button irene"><a
-                                href="https://www.linkedin.com/in/irene-chok-2716b0239/"><img src="Images/irene.jpeg"
-                                    class="irene-img"></a></div>
-                        <div class="social-button lexin">
-                            <a
-                                href="https://www.linkedin.com/in/le-xin-pang-74723b238/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><img
-                                    src="Images/lexin.jpeg" class="lexin-img"></a>
-                        </div>
-                        <div class="social-button yenzhen">
-                            <a href="https://www.linkedin.com/in/leong-yen-zhen-92a039239/"><img
-                                    src="Images/yenzhen.jpeg" class="yenzhen-img"></a>
-                        </div>
-                        <div class="social-button ziyu">
-                            <a href="https://www.linkedin.com/in/ziyu-gao-8a9b89238/"><img src="Images/ziyu.JPG"
-                                    class="ziyu-img"></a>
-                        </div>
+        </section>
+        <div class="member-footer">
+            <div class="footer-header">
+                <h4>Contact Us</h4>
+                <div class="social-buttons-container">
+                    <div class="social-button irene"><a href="https://www.linkedin.com/in/irene-chok-2716b0239/"><img
+                                src="Images/irene.jpeg" class="irene-img"></a></div>
+                    <div class="social-button lexin">
+                        <a
+                            href="https://www.linkedin.com/in/le-xin-pang-74723b238/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><img
+                                src="Images/lexin.jpeg" class="lexin-img"></a>
+                    </div>
+                    <div class="social-button yenzhen">
+                        <a href="https://www.linkedin.com/in/leong-yen-zhen-92a039239/"><img src="Images/yenzhen.jpeg"
+                                class="yenzhen-img"></a>
+                    </div>
+                    <div class="social-button ziyu">
+                        <a href="https://www.linkedin.com/in/ziyu-gao-8a9b89238/"><img src="Images/ziyu.JPG"
+                                class="ziyu-img"></a>
                     </div>
                 </div>
-                <script type="module">
-                    // Import the functions
-            import {
-                initializeApp
-            } from 'https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js';
-    
-            import {
-                getDatabase, ref, set, get, onValue, push, child, update, remove
-            } from 'https://www.gstatic.com/firebasejs/10.6.0/firebase-database.js';
-    
-            import {
-                getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut
-            } from 'https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js';
-    
-    
-            // Firebase configuration
-            const firebaseConfig = {
-                apiKey: "AIzaSyAw-4aRRZatlYQ0HGo3WAJso8QjWjiPejQ",
-                authDomain: "mindsculpt-de553.firebaseapp.com",
-                databaseURL: "https://mindsculpt-de553-default-rtdb.asia-southeast1.firebasedatabase.app",
-                projectId: "mindsculpt-de553",
-                storageBucket: "mindsculpt-de553.appspot.com",
-                messagingSenderId: "710053589294",
-                appId: "1:710053589294:web:7892a718dd507fd9c8cabf"
-            };
-    
-            // Initialize Firebase
-            // const app = initializeApp(firebaseConfig);
-            // const db = getDatabase();
-    
-            // var feedbackData = {
-            //     username: "Dinosauro",
-            //     gender: "Female",
-            //     age: "28",
-            //     feedback: "You are doing great, never give up and keep going!"
-            // };
-    
-            // set(ref(db, 'submissions/0010'), feedbackData);
+            </div>
+        </div>
+    </div>
+    <div id="modal">
+        <span style="float: right;color: white;font-size: 15px; cursor: pointer;" onclick="modalClose()">Close</span>
+        <div class="modal-content">
+            <h2>Download Our Game</h2>
+            <p>Download our game to start your journey to a better mental health!</p>
+            <div class="row">
+                <div class="col-md-4" style="display: flex; align-items: center; justify-content: center;">
+                    <div class="download">Download Game</div>
+                </div>
+                <div class="col-md-4" style="font-size:20px; display: flex; align-items: center; justify-content: center;font-weight: bold;">
+                    Or
+                </div>
+                <div class="col-md-4">
+                    <img src="Images/sq.jpg" width="150px">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="bg"></div>
+    <script>
+        function modalOpen(){
+            document.getElementById('modal').style.display = 'block';
+            document.getElementById('bg').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
 
-            const $window = $(window);
-const $body = $('body');
+        function modalClose(){
+            document.getElementById('modal').style.display = 'none';
+            document.getElementById('bg').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    </script>
+    <script type="module">
+        // Import the functions
+        import {
+            initializeApp
+        } from 'https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js';
 
-class Slideshow {
-	constructor (userOptions = {}) {
-    const defaultOptions = {
-      $el: $('.slideshow'),
-      showArrows: false,
-      showPagination: true,
-      duration: 10000,
-      autoplay: true
-    }
-    
-    let options = Object.assign({}, defaultOptions, userOptions);
-    
-		this.$el = options.$el;
-		this.maxSlide = this.$el.find($('.js-slider-home-slide')).length;
-    this.showArrows = this.maxSlide > 1 ? options.showArrows : false;
-    this.showPagination = options.showPagination;
-		this.currentSlide = 1;
-		this.isAnimating = false;
-		this.animationDuration = 1200;
-		this.autoplaySpeed = options.duration;
-		this.interval;
-		this.$controls = this.$el.find('.js-slider-home-button');
-    this.autoplay = this.maxSlide > 1 ? options.autoplay : false;
+        import {
+            getDatabase, ref, set, get, onValue, push, child, update, remove
+        } from 'https://www.gstatic.com/firebasejs/10.6.0/firebase-database.js';
 
-		this.$el.on('click', '.js-slider-home-next', (event) => this.nextSlide());
-		this.$el.on('click', '.js-slider-home-prev', (event) => this.prevSlide());
-    this.$el.on('click', '.js-pagination-item', event => {
-      if (!this.isAnimating) {
-        this.preventClick();
-  this.goToSlide(event.target.dataset.slide);
-      }
-    });
+        import {
+            getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut
+        } from 'https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js';
 
-		this.init();
-	}
-  
-  init() {
-    this.goToSlide(1);
-    if (this.autoplay) {
-      this.startAutoplay();
-    }
-    
-    if (this.showPagination) {
-      let paginationNumber = this.maxSlide;
-      let pagination = '<div class="pagination"><div class="container">';
-      
-      for (let i = 0; i < this.maxSlide; i++) {
-        let item = `<span class="pagination__item js-pagination-item ${ i === 0 ? 'is-current' : ''}" data-slide=${i + 1}>${i + 1}</span>`;
-        pagination  = pagination + item;
-      }
-      
-      pagination = pagination + '</div></div>';
-      
-      this.$el.append(pagination);
-    }
-  }
-  
-  preventClick() {
-		this.isAnimating = true;
-		this.$controls.prop('disabled', true);
-		clearInterval(this.interval);
 
-		setTimeout(() => {
-			this.isAnimating = false;
-			this.$controls.prop('disabled', false);
-      if (this.autoplay) {
-			  this.startAutoplay();
-      }
-		}, this.animationDuration);
-	}
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyAw-4aRRZatlYQ0HGo3WAJso8QjWjiPejQ",
+            authDomain: "mindsculpt-de553.firebaseapp.com",
+            databaseURL: "https://mindsculpt-de553-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "mindsculpt-de553",
+            storageBucket: "mindsculpt-de553.appspot.com",
+            messagingSenderId: "710053589294",
+            appId: "1:710053589294:web:7892a718dd507fd9c8cabf"
+        };
 
-	goToSlide(index) {    
-    this.currentSlide = parseInt(index);
-    
-    if (this.currentSlide > this.maxSlide) {
-      this.currentSlide = 1;
-    }
-    
-    if (this.currentSlide === 0) {
-      this.currentSlide = this.maxSlide;
-    }
-    
-    const newCurrent = this.$el.find('.js-slider-home-slide[data-slide="'+ this.currentSlide +'"]');
-    const newPrev = this.currentSlide === 1 ? this.$el.find('.js-slider-home-slide').last() : newCurrent.prev('.js-slider-home-slide');
-    const newNext = this.currentSlide === this.maxSlide ? this.$el.find('.js-slider-home-slide').first() : newCurrent.next('.js-slider-home-slide');
-    
-    this.$el.find('.js-slider-home-slide').removeClass('is-prev is-next is-current');
-    this.$el.find('.js-pagination-item').removeClass('is-current');
-    
-		if (this.maxSlide > 1) {
-      newPrev.addClass('is-prev');
-      newNext.addClass('is-next');
-    }
-    
-    newCurrent.addClass('is-current');
-    this.$el.find('.js-pagination-item[data-slide="'+this.currentSlide+'"]').addClass('is-current');
-  }
-  
-  nextSlide() {
-    this.preventClick();
-    this.goToSlide(this.currentSlide + 1);
-	}
-   
-	prevSlide() {
-    this.preventClick();
-    this.goToSlide(this.currentSlide - 1);
-	}
+        // Initialize Firebase
+        // const app = initializeApp(firebaseConfig);
+        // const db = getDatabase();
 
-	startAutoplay() {
-		this.interval = setInterval(() => {
-			if (!this.isAnimating) {
-				this.nextSlide();
-			}
-		}, this.autoplaySpeed);
-	}
+        // var feedbackData = {
+        //     username: "Dinosauro",
+        //     gender: "Female",
+        //     age: "28",
+        //     feedback: "You are doing great, never give up and keep going!"
+        // };
 
-	destroy() {
-		this.$el.off();
-	}
-}
+        // set(ref(db, 'users/0010'), feedbackData);
 
-(function() {
-	let loaded = false;
-	let maxLoad = 3000;  
-  
-	function load() {
-		const options = {
-      showPagination: true
-    };
+        const $window = $(window);
+        const $body = $('body');
 
-    let slideShow = new Slideshow(options);
-	}
-  
-	function addLoadClass() {
-		$body.addClass('is-loaded');
+        class Slideshow {
+            constructor(userOptions = {}) {
+                const defaultOptions = {
+                    $el: $('.slideshow'),
+                    showArrows: false,
+                    showPagination: true,
+                    duration: 10000,
+                    autoplay: true
+                }
 
-		setTimeout(function() {
-			$body.addClass('is-animated');
-		}, 600);
-	}
-  
-	$window.on('load', function() {
-		if(!loaded) {
-			loaded = true;
-			load();
-		}
-	});
-  
-	setTimeout(function() {
-		if(!loaded) {
-			loaded = true;
-			load();
-		}
-	}, maxLoad);
+                let options = Object.assign({}, defaultOptions, userOptions);
 
-	addLoadClass();
-})();
+                this.$el = options.$el;
+                this.maxSlide = this.$el.find($('.js-slider-home-slide')).length;
+                this.showArrows = this.maxSlide > 1 ? options.showArrows : false;
+                this.showPagination = options.showPagination;
+                this.currentSlide = 1;
+                this.isAnimating = false;
+                this.animationDuration = 1200;
+                this.autoplaySpeed = options.duration;
+                this.interval;
+                this.$controls = this.$el.find('.js-slider-home-button');
+                this.autoplay = this.maxSlide > 1 ? options.autoplay : false;
 
-        </script>
+                this.$el.on('click', '.js-slider-home-next', (event) => this.nextSlide());
+                this.$el.on('click', '.js-slider-home-prev', (event) => this.prevSlide());
+                this.$el.on('click', '.js-pagination-item', event => {
+                    if (!this.isAnimating) {
+                        this.preventClick();
+                        this.goToSlide(event.target.dataset.slide);
+                    }
+                });
+
+                this.init();
+            }
+
+            init() {
+                this.goToSlide(1);
+                if (this.autoplay) {
+                    this.startAutoplay();
+                }
+
+                if (this.showPagination) {
+                    let paginationNumber = this.maxSlide;
+                    let pagination = '<div class="pagination"><div class="container">';
+
+                    for (let i = 0; i < this.maxSlide; i++) {
+                        let item = `<span class="pagination__item js-pagination-item ${i === 0 ? 'is-current' : ''}" data-slide=${i + 1}>${i + 1}</span>`;
+                        pagination = pagination + item;
+                    }
+
+                    pagination = pagination + '</div></div>';
+
+                    this.$el.append(pagination);
+                }
+            }
+
+            preventClick() {
+                this.isAnimating = true;
+                this.$controls.prop('disabled', true);
+                clearInterval(this.interval);
+
+                setTimeout(() => {
+                    this.isAnimating = false;
+                    this.$controls.prop('disabled', false);
+                    if (this.autoplay) {
+                        this.startAutoplay();
+                    }
+                }, this.animationDuration);
+            }
+
+            goToSlide(index) {
+                this.currentSlide = parseInt(index);
+
+                if (this.currentSlide > this.maxSlide) {
+                    this.currentSlide = 1;
+                }
+
+                if (this.currentSlide === 0) {
+                    this.currentSlide = this.maxSlide;
+                }
+
+                const newCurrent = this.$el.find('.js-slider-home-slide[data-slide="' + this.currentSlide + '"]');
+                const newPrev = this.currentSlide === 1 ? this.$el.find('.js-slider-home-slide').last() : newCurrent.prev('.js-slider-home-slide');
+                const newNext = this.currentSlide === this.maxSlide ? this.$el.find('.js-slider-home-slide').first() : newCurrent.next('.js-slider-home-slide');
+
+                this.$el.find('.js-slider-home-slide').removeClass('is-prev is-next is-current');
+                this.$el.find('.js-pagination-item').removeClass('is-current');
+
+                if (this.maxSlide > 1) {
+                    newPrev.addClass('is-prev');
+                    newNext.addClass('is-next');
+                }
+
+                newCurrent.addClass('is-current');
+                this.$el.find('.js-pagination-item[data-slide="' + this.currentSlide + '"]').addClass('is-current');
+            }
+
+            nextSlide() {
+                this.preventClick();
+                this.goToSlide(this.currentSlide + 1);
+            }
+
+            prevSlide() {
+                this.preventClick();
+                this.goToSlide(this.currentSlide - 1);
+            }
+
+            startAutoplay() {
+                this.interval = setInterval(() => {
+                    if (!this.isAnimating) {
+                        this.nextSlide();
+                    }
+                }, this.autoplaySpeed);
+            }
+
+            destroy() {
+                this.$el.off();
+            }
+        }
+
+        (function () {
+            let loaded = false;
+            let maxLoad = 3000;
+
+            function load() {
+                const options = {
+                    showPagination: true
+                };
+
+                let slideShow = new Slideshow(options);
+            }
+
+            function addLoadClass() {
+                $body.addClass('is-loaded');
+
+                setTimeout(function () {
+                    $body.addClass('is-animated');
+                }, 600);
+            }
+
+            $window.on('load', function () {
+                if (!loaded) {
+                    loaded = true;
+                    load();
+                }
+            });
+
+            setTimeout(function () {
+                if (!loaded) {
+                    loaded = true;
+                    load();
+                }
+            }, maxLoad);
+
+            addLoadClass();
+        })();
+
+    </script>
+    <script src="Js/app.js"></script>
 </body>
 
 </html>
