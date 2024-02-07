@@ -60,9 +60,10 @@
                 <div class="slideshow__slide-caption">
                     <div class="slideshow__slide-caption-text">
                         <div class="container js-parallax" data-speed="2" data-position="top" data-target="#js-header">
-                            <h1 class="slideshow__slide-caption-title">Everything broken can be repaired</h1>
+                            <h1 class="slideshow__slide-caption-title">MindSculpt. An immersive in-mind journey.</h1>
                             <a class="slideshow__slide-caption-subtitle -load o-hsub -link" href="#">
-                                <span class="slideshow__slide-caption-subtitle-label" onclick="modalOpen()">Download Game</span>
+                                <span class="slideshow__slide-caption-subtitle-label" onclick="modalOpen()">Download
+                                    Game</span>
                             </a>
                         </div>
                     </div>
@@ -78,7 +79,7 @@
                                 <div class="slideshow__slide-background background-absolute">
                                     <div class="slideshow__slide-image-wrap background-absolute">
                                         <div class="slideshow__slide-image background-absolute"
-                                            style="background-image: url('https://images.pexels.com/photos/110649/pexels-photo-110649.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1080&w=1920');">
+                                            style="background-image: url('Images/about_bg.jpeg');">
                                         </div>
                                     </div>
                                 </div>
@@ -89,9 +90,9 @@
                 <div class="slideshow__slide-caption">
                     <div class="slideshow__slide-caption-text">
                         <div class="container js-parallax" data-speed="2" data-position="top" data-target="#js-header">
-                            <h1 class="slideshow__slide-caption-title">See through the field</h1>
-                            <a class="slideshow__slide-caption-subtitle -load o-hsub -link" href="#">
-                                <span class="slideshow__slide-caption-subtitle-label">Learn more about</span>
+                            <h1 class="slideshow__slide-caption-title">About Us</h1>
+                            <a class="slideshow__slide-caption-subtitle -load o-hsub -link" href="about.html">
+                                <span class="slideshow__slide-caption-subtitle-label">Learn More About Us</span>
                             </a>
                         </div>
                     </div>
@@ -107,7 +108,7 @@
                                 <div class="slideshow__slide-background background-absolute">
                                     <div class="slideshow__slide-image-wrap background-absolute">
                                         <div class="slideshow__slide-image background-absolute"
-                                            style="background-image: url('https://images.pexels.com/photos/196666/pexels-photo-196666.jpeg?auto=compress&cs=tinysrgb&h=1080&w=1920');">
+                                            style="background-image: url('Images/home3bg.png');">
                                         </div>
                                     </div>
                                 </div>
@@ -118,9 +119,9 @@
                 <div class="slideshow__slide-caption">
                     <div class="slideshow__slide-caption-text">
                         <div class="container js-parallax" data-speed="2" data-position="top" data-target="#js-header">
-                            <h1 class="slideshow__slide-caption-title">Hey, take a time to relax!</h1>
-                            <a class="slideshow__slide-caption-subtitle -load o-hsub -link" href="#">
-                                <span class="slideshow__slide-caption-subtitle-label">Everybody needs</span>
+                            <h1 class="slideshow__slide-caption-title">Encouraging Messages by Our Players</h1>
+                            <a class="slideshow__slide-caption-subtitle -load o-hsub -link" href="wordCloud.html">
+                                <span class="slideshow__slide-caption-subtitle-label">Check It Out</span>
                             </a>
                         </div>
                     </div>
@@ -194,7 +195,8 @@
                 <div class="col-md-4" style="display: flex; align-items: center; justify-content: center;">
                     <div class="download">Download Game</div>
                 </div>
-                <div class="col-md-4" style="font-size:20px; display: flex; align-items: center; justify-content: center;font-weight: bold;">
+                <div class="col-md-4"
+                    style="font-size:20px; display: flex; align-items: center; justify-content: center;font-weight: bold;">
                     Or
                 </div>
                 <div class="col-md-4">
@@ -205,13 +207,13 @@
     </div>
     <div id="bg"></div>
     <script>
-        function modalOpen(){
+        function modalOpen() {
             document.getElementById('modal').style.display = 'block';
             document.getElementById('bg').style.display = 'block';
             document.body.style.overflow = 'hidden';
         }
 
-        function modalClose(){
+        function modalClose() {
             document.getElementById('modal').style.display = 'none';
             document.getElementById('bg').style.display = 'none';
             document.body.style.overflow = 'auto';
@@ -243,18 +245,17 @@
             appId: "1:710053589294:web:7892a718dd507fd9c8cabf"
         };
 
-        // Initialize Firebase
+        // // Initialize Firebase
         // const app = initializeApp(firebaseConfig);
         // const db = getDatabase();
 
         // var feedbackData = {
-        //     username: "Dinosauro",
-        //     gender: "Female",
-        //     age: "28",
-        //     feedback: "You are doing great, never give up and keep going!"
+        //     gender: "Male",
+        //     age: "20",
+        //     message: "You are not your illness. You have an individual story to tell"
         // };
 
-        // set(ref(db, 'users/0010'), feedbackData);
+        // set(ref(db, 'users/0012'), feedbackData);
 
         const $window = $(window);
         const $body = $('body');

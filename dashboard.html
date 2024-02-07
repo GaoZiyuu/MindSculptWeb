@@ -27,7 +27,7 @@
                 <a href="index.html" style="display: contents;"><img src="Images/logo.png" alt=""></a>
             </div>
             <ul id="menu">
-                <a href="#">
+                <a href="about.html">
                     <li>About</li>
                 </a>
                 <a href="wordCloud.html">
@@ -65,7 +65,6 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Username</th>
                                     <th>Age</th>
                                     <th>Gender</th>
                                     <th>Feedback</th>
@@ -112,7 +111,7 @@
         const app = initializeApp(firebaseConfig);
         const db = getDatabase();
 
-        onValue(ref(db, 'submissions'), (snapshot) => {
+        onValue(ref(db, 'users'), (snapshot) => {
             const data = snapshot.val();
             var feedbacks = data;
 
@@ -120,17 +119,17 @@
             var table = document.getElementById("feedbackTable");
 
             for (let id in feedbacks) {
-                var username = feedbacks[id].username
                 var gender = feedbacks[id].gender
                 var age = feedbacks[id].age
-                var feedback = feedbacks[id].feedback
+                var feedback = feedbacks[id].message
 
-                table.innerHTML += "<tr><td>" + id + "</td><td>" + username + "</td><td>" + age + "</td><td>" + gender + "</td><td>" + feedback + "</td></tr>"
+                table.innerHTML += "<tr><td>" + id + "</td><td>" + age + "</td><td>" + gender + "</td><td>" + feedback + "</td></tr>"
             }
 
             // pie chart for gender
             var male = 0
             var female = 0
+            var other = 0
 
             for (let id in feedbacks) {
                 if (feedbacks[id].gender == 'Male') {
@@ -139,15 +138,18 @@
                 else if (feedbacks[id].gender == 'Female') {
                     female += 1
                 }
+                else if (feedbacks[id].gender == 'Other') {
+                    other += 1
+                }
             }
 
             new Chart(document.getElementById('genderChart'), {
                 type: "doughnut",
                 data: {
-                    labels: ['Male', 'Female'],
+                    labels: ['Male', 'Female', 'Other'],
                     datasets: [{
-                        backgroundColor: ['Blue', 'Pink'],
-                        data: [male, female]
+                        backgroundColor: ['Blue', 'Pink', 'Grey'],
+                        data: [male, female, other]
                     }]
                 },
                 options: {
